@@ -13,7 +13,8 @@
 
 cmake_minimum_required(VERSION 3.0)
 project(aws-c-common LANGUAGES C VERSION 0.1.0)
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wno-return-type-c-linkage -Wno-unneeded-internal-declaration")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fno-strict-aliasing")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(AwsCFlags)
 include(AwsSharedLibSetup)
